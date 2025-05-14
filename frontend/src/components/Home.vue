@@ -59,7 +59,14 @@
       title: '代码生成',
       description: '根据模型生成代码，支持多种语言和框架。',
       buttonText: '立即生成',
-      link: 'codegen',
+      link: 'modulegen',
+      icon: Share
+    },
+    {
+      title: 'AI智能对话',
+      description: '对话生成各种需求，架构',
+      buttonText: '立即生成',
+      link: 'modulegen',
       icon: Share
     }
   ]

@@ -5,7 +5,8 @@
       <router-link to="/">首页</router-link>
       <router-link to="/requirement">需求分析</router-link>
       <router-link to="/architecture">架构设计</router-link>
-      <router-link to="/codegen">代码生成</router-link>
+      <router-link to="/modulegen">模块代码</router-link>
+      <router-link to="/codegen">智能对话</router-link>
     </nav>
 
     <!-- 主体内容区域 -->

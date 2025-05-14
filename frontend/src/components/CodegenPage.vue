@@ -1,6 +1,22 @@
 <template>
+    <el-form-item label="API选择">
+    <el-select
+      v-model="selectedApi"
+      placeholder="请选择API"
+      :disabled="loading"
+    >
+      <el-option
+        v-for="option in apiOptions"
+        :key="option.value"
+        :label="option.label"
+        :value="option.value"
+      />
+    </el-select>
+  </el-form-item>
+  <div>当前选中的 API：{{ selectedApi }}</div>
     <div class="chat-interface">
       <h1>AI聊天界面</h1>
+
       <div ref="chatContainer" class="chat-container">
         <div 
           v-for="(message, index) in messages"
@@ -21,10 +37,17 @@
       </div>
     </div>
   </template>
-  
+  <!--   { value: 'http://127.0.0.1:5000/api/requirement', label: '需求分析' },
+  { value: 'http://127.0.0.1:5000/api/sound', label: '声音处理' } -->
   <script setup>
   import { ref, reactive, computed, nextTick, onMounted } from 'vue'
+  const selectedApi = ref('')
   
+  const apiOptions = [
+    { value: 'http://127.0.0.1:5000/api/chat', label: '代码生成' },
+    { value: 'http://127.0.0.1:5000/api/translate', label: '智能翻译' },
+    { value: 'http://127.0.0.1:5000/api/analyze', label: '数据分析' }
+];
   // 响应式数据
   const inputText = ref('')
   const messages = reactive([])
@@ -70,7 +93,8 @@
 
     try {
       isStreaming.value = true
-      const response = await fetch('http://127.0.0.1:5000/api/chat', {
+      console.log(selectedApi)
+      const response = await fetch(selectedApi.value, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

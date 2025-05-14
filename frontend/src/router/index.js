@@ -4,17 +4,18 @@ import RequirementPage from '@/components/RequirementPage.vue' // 根据实际�
 import ArchitecturePage from '@/components/ArchitecturePage.vue'
 import CodegenPage from '@/components/CodegenPage.vue'
 import Home from '@/components/Home.vue'
+import ModuleGenPage from '@/components/ModuleGenPage.vue'
 
 const routes = [
     {
         path: '/requirement',
         name: 'requirement',
-        component: () => import('@/components/RequirementPage.vue')
+        component: RequirementPage
     },
     {
         path: '/',
         name: 'home',
-        component: () => import('@/components/Home.vue')
+        component: Home
     },
     {
         path: '/architecture',
@@ -25,6 +26,11 @@ const routes = [
         path: '/codegen',
         name: 'codegen',
         component: CodegenPage
+    },
+    {
+        path: '/modulegen',
+        name: 'modulegen',
+        component: ModuleGenPage
     }
 ]
 
