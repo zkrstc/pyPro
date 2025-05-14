@@ -1,5 +1,5 @@
 # 配置参数
-
+#sk-9fed7ab556244263bb8943cddb854a71
 APP_NAME = "我的Python程序"
 
 VERSION = "1.0.0"

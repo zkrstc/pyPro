@@ -71,6 +71,7 @@ def get_api_response(user_message, max_retries=3):
 def chat():
     try:
         user_message = request.json['message']
+
         print(f"\n用户问题: {user_message}")
 
         def generate():

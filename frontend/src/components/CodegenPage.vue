@@ -67,7 +67,7 @@
     
     inputText.value = ''
     await scrollToBottom()
-  
+
     try {
       isStreaming.value = true
       const response = await fetch('http://127.0.0.1:5000/api/chat', {
